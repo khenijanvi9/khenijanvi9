@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Sign Up</title>
     <style>
         /* Base Reset & Styling */
         * {
@@ -22,14 +22,14 @@
             padding: 20px;
         }
 
-        /* Container Card styling with initial loading animation */
-        .signin-card {
+        /* Container Card styling with entrance animation */
+        .signup-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
             width: 100%;
-            max-width: 400px;
+            max-width: 420px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
             opacity: 0;
             transform: translateY(20px);
@@ -43,7 +43,7 @@
             }
         }
 
-        .signin-card h2 {
+        .signup-card h2 {
             color: #1e293b;
             font-size: 1.85rem;
             font-weight: 700;
@@ -55,12 +55,12 @@
             color: #64748b;
             font-size: 0.9rem;
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 24px;
         }
 
         /* Form Controls */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
@@ -113,36 +113,32 @@
             transform: translateY(-50%) scale(1.1);
         }
 
-        /* Row Layout for Checkbox & Password Reset Links */
-        .form-options {
+        /* Checkbox row styling */
+        .terms-option {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            align-items: flex-start;
             font-size: 0.85rem;
-            margin-top: -4px;
-            margin-bottom: 24px;
-        }
-
-        .remember-me {
-            display: flex;
-            align-items: center;
             color: #475569;
+            margin-top: 4px;
+            margin-bottom: 24px;
             cursor: pointer;
+            line-height: 1.4;
         }
 
-        .remember-me input {
-            margin-right: 6px;
+        .terms-option input {
+            margin-top: 2px;
+            margin-right: 8px;
             accent-color: #6366f1;
             cursor: pointer;
         }
 
-        .forgot-link {
+        .terms-option a {
             color: #6366f1;
             text-decoration: none;
             font-weight: 500;
         }
 
-        .forgot-link:hover {
+        .terms-option a:hover {
             text-decoration: underline;
         }
 
@@ -192,12 +188,23 @@
 </head>
 <body>
 
-    <div class="signin-card">
-        <h2>Sign In</h2>
-        <p class="subtitle">Access your dashboard profile</p>
+    <div class="signup-card">
+        <h2>Create Account</h2>
+        <p class="subtitle">Get started with your new account</p>
         
-        <form onsubmit="event.preventDefault(); alert('Sign In Attempt Confirmed.');">
+        <form onsubmit="event.preventDefault(); alert('Sign Up Submission Logged.');">
             
+            <div class="form-group">
+                <label>Full Name</label>
+                <div class="input-wrapper">
+                    <input type="text" required placeholder="John Doe">
+                    <svg class="input-icon" viewBox="0 0 24 24">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label>Email Address</label>
                 <div class="input-wrapper">
@@ -212,28 +219,4 @@
             <div class="form-group">
                 <label>Password</label>
                 <div class="input-wrapper">
-                    <input type="password" required placeholder="••••••••">
-                    <svg class="input-icon" viewBox="0 0 24 24">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="form-options">
-                <label class="remember-me">
-                    <input type="checkbox"> Remember me
-                </label>
-                <a href="#" class="forgot-link">Forgot password?</a>
-            </div>
-
-            <button type="submit" class="submit-btn">Sign In</button>
-        </form>
-
-        <div class="footer-text">
-            Don't have an account? <a href="#">Sign up</a>
-        </div>
-    </div>
-
-</body>
-</html>
+                    <input type="password"
